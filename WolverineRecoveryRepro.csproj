@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+    <!-- Override to check another release: dotnet test -p:WolverineVersion=6.61.0 -->
+    <WolverineVersion Condition="'$(WolverineVersion)' == ''">6.51.3</WolverineVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WolverineFx" Version="$(WolverineVersion)" />
+    <PackageReference Include="WolverineFx.Postgresql" Version="$(WolverineVersion)" />
+    <PackageReference Include="WolverineFx.RabbitMQ" Version="$(WolverineVersion)" />
+    <PackageReference Include="WolverineFx.RuntimeCompilation" Version="$(WolverineVersion)" />
+    <PackageReference Include="Testcontainers.PostgreSql" Version="4.15.0" />
+    <PackageReference Include="Testcontainers.RabbitMq" Version="4.15.0" />
+    <PackageReference Include="xunit.v3.mtp-v2" Version="3.2.2" />
+  </ItemGroup>
+
+</Project>
